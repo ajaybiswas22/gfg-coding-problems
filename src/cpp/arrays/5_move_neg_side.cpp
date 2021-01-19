@@ -18,7 +18,7 @@ void printArray(int arr[], int size)
 
 void move_neg_side(int arr[],int n)
 {
-    // we need to pointers, one will be searching for negatives,
+    // we need two pointers, one will be searching for negatives,
     // other will be moving counter forward
 
     int i=0,j=0;
