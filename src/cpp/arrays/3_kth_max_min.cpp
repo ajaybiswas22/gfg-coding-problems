@@ -21,6 +21,7 @@ void find_kth_max_min(int arr[],int n,int k)
     if(k > n)
     {
         cout<<"Invalid k"<<endl;
+        return;
     }
 
     // kth largest
