@@ -40,5 +40,7 @@ int main(void)
 	cout << "\nSecond Array: "; 
 	for (int i=0; i<n; i++) 
 		cout << ar2[i] << " "; 
+
+system("PAUSE");
 return 0; 
 } 
