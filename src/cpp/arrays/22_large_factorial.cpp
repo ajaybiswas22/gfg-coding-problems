@@ -2,9 +2,7 @@
 using namespace std; 
 #define MAX 1000 
 
-// Function to find the factorial 
-// of large number and return 
-// them in string format 
+// factorial of a large number
 void factorial(long long n) 
 { 
 	if (n > MAX) { 
@@ -21,9 +19,7 @@ void factorial(long long n)
 	{
 		cout<<1<<endl;
 	}
-	else{
-		
-
+	else {
 	// Calculate the sum of 
 	// logarithmic values 
 
@@ -38,13 +34,12 @@ void factorial(long long n)
 	// Answer is sometimes under 
 	// estimated due to floating point 
 	// operations so round() is used 
-	cout<<round(exp(sum))<<endl; 
+	cout<<to_string(round(exp(sum)))<<endl; 
 	}
 } 
 
-// Driver code 
 int main() 
 { 
 	factorial(100); 
-    return 0;
+	system("PAUSE");
 } 
