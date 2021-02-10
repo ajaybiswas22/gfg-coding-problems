@@ -1,3 +1,5 @@
+// program to find all unique subsequences
+
 #include<bits/stdc++.h>
 using namespace std;
 
