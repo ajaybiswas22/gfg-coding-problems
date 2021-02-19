@@ -1,25 +1,45 @@
-// program to find all permutation
+// C++ program to print all 
+// permutations with duplicates allowed 
+// Time COmplexity O(n*n!)
 
-#include<bits/stdc++.h>
-using namespace std;
-
-// permutation logic
-// fix one character, permute others
-// if two strings then swap
-// do with recursion
-
-void permutations(string s,int start,int end)
-{
-    
-    if(start == end)
-    {
-        
-    }
-}
-
-int main()
-{
-    string s = "AJAY";
-    permutations(s,0,3);
-
-}
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+ 
+// Function to print permutations of string 
+// This function takes three parameters: 
+// 1. String 
+// 2. Starting index of the string 
+// 3. Ending index of the string. 
+void permute(string a, int l, int r) 
+{ 
+    // Base case 
+    if (l == r) 
+        cout<<a<<endl; 
+    else
+    { 
+        // Permutations made 
+        for (int i = l; i <= r; i++) 
+        { 
+ 
+            // Swapping done 
+            swap(a[l], a[i]); 
+ 
+            // Recursion called 
+            permute(a, l+1, r); 
+ 
+            //backtrack 
+            swap(a[l], a[i]); 
+        } 
+    } 
+} 
+ 
+// Driver Code 
+int main() 
+{ 
+    string str = "ABC"; 
+    int n = str.size(); 
+    permute(str, 0, n-1); 
+    system("PAUSE");
+    return 0; 
+} 
