@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++",
-                "C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32"
+                "C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++",
+                "C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/x86_64-w64-mingw32"
             ],
             "defines": [
                 "_DEBUG",
@@ -13,9 +13,9 @@
                 "_UNICODE"
             ],
             "cStandard": "gnu11",
-            "cppStandard": "c++17",
+            "cppStandard": "c++11",
             "intelliSenseMode": "linux-gcc-x86",
-            "compilerPath": "C:/MinGW/bin/g++.exe"
+            "compilerPath": "C:/Dev-Cpp/MinGW64/bin/g++.exe"
         }
     ],
     "version": 4
