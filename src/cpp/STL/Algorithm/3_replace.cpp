@@ -16,9 +16,11 @@ int main()
     vector<int> list = {67,72,56,12,0,-3,21,9,10,100};
     cout<<"Original List: ";
     printList(list);
-    // shuffing the list
-    random_shuffle(list.begin(),list.end());
-    cout<<"\nShuffled List: ";
+
+    // std::replace
+    // replaces occurances of old value with new value
+    replace(list.begin(),list.end(),72,27);
+    cout<<"\nAltered List: ";
     printList(list);
 
     return 0;

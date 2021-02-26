@@ -13,13 +13,11 @@ void printList(vector<int> list)
 
 int main()
 {
-    vector<int> list = {67,72,56,12,0,-3,21,9,10,100};
-    cout<<"Original List: ";
-    printList(list);
-    // shuffing the list
-    random_shuffle(list.begin(),list.end());
-    cout<<"\nShuffled List: ";
-    printList(list);
+    string str = "Hello World!";
+    vector<char> vstr(str.begin(),str.end());
 
-    return 0;
+    // iterator to offset. Does not works with string as search element.
+    auto it = find(vstr.begin(),vstr.end(),'W');
+
+    cout<<"Offset: "<<it - vstr.begin()<<endl;
 }
