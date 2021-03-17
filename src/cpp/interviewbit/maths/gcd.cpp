@@ -17,6 +17,6 @@ int gcd(int A,int B)
 }
 int main()
 {
-    cout<<gcd(40,12)<<endl;
+    cout<<gcd(10,12)<<endl;
 
 }

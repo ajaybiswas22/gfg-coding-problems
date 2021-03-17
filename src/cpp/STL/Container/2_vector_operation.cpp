@@ -23,14 +23,15 @@ int main()
     v.clear();                              // removes all element
     cout<<"Size: "<<v.size()<<endl;
     cout<<"Capacity: "<<v.capacity()<<endl;
-    cout<<v.empty()<<endl;                  // is vector empty?
+    cout<<"Empty Status: "<<v.empty()<<endl;                  // is vector empty?
 
     v.push_back(10);
     v.push_back(20);
     v.push_back(30);
+    v.push_back(40);
 
-    v.erase(v.begin());                     // erase the first element
-    cout<<"erased"<<endl;
+    v.erase(v.begin(),v.begin()+2);         // erase the first two elements
+    cout<<"erased 10 and 20"<<endl;
     cout<<"Front: "<<v.front()<<endl;       // first value in the vector
     cout<<"Back: "<<v.back()<<endl;         // last value in the vector
     cout<<"Pop back:"<<endl;                
@@ -44,4 +45,17 @@ int main()
     printInt(v);
     cout<<"Vector v2: ";
     printInt(v2);
+
+    reverse(v.begin(),v.end());             // reverses a vector from start to end position
+    cout<<"Reversed Vector v: ";
+    printInt(v);
+
+    sort(v.begin(),v.end());                // Sorts a vector in ascending order
+    cout<<"Sorted Vector v: ";
+    printInt(v);
+
+    sort(v.begin(), v.end(), greater<int>());   // Sorts a vector in descending order
+    cout<<"Sorted Vector v non-increasing: ";
+    printInt(v);
+
 }
