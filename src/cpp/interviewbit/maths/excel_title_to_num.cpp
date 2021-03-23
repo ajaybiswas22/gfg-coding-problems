@@ -20,6 +20,6 @@ int titleToNumber(string A) {
 int main()
 {
 
-    string a = "ABBA";
+    string a = "BAQUZ";
     cout<<titleToNumber(a)<<endl;
 }
