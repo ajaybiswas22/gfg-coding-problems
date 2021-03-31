@@ -15,8 +15,9 @@ using namespace std;
 * @return 
 *   Result of (x^n)%d as an integer.
 */
-int power(int x,int n,int d)
+long long power(long long x,long long n,int d)
 {
+    
     // base conditions
     if(x == 0 && n == 0)
         return INT32_MAX;
@@ -25,7 +26,7 @@ int power(int x,int n,int d)
     else if(n == 0)
         return 1;
     else if(n == 1)
-        return x; 
+        return x % d; 
     else if(n == 2)
         return (x*x) % d;  
     
@@ -47,5 +48,16 @@ int power(int x,int n,int d)
 
 int main()
 {
-    cout<<power(0,3,500)<<endl;
+   int a = 64228540;
+   int b = 77622773;
+   int c = 88392672;
+   long long x = power(a,b,c);
+
+    if(x < 0)
+    {
+        cout<<c + (x % c);
+    }
+    else{
+        cout<<x<<endl;
+    }
 }
