@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-countOne(vector<int> A)
+int countOne(vector<int> A)
 {
     int low = 0, high = A.size()-1;
     int mid = low + (high-low)/2;
