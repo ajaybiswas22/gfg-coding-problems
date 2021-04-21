@@ -98,8 +98,8 @@ int bs(vector<int> &A, int low, int high)
 
 int main()
 {
-    vector<int> A = {5, 6, 7, 8, 9, 10, 3, 2, 1};
-    int val = 3;
+    vector<int> A = { 5, 6, 7, 8, 9, 10, 3, 2, 1};
+    int val = 11;
     int pos = findPeak(A);
 
     if(A[pos] == val )
