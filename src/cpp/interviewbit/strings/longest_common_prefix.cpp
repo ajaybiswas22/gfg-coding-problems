@@ -10,12 +10,14 @@ string prefix(vector<string> &A)
     int flag = 0;
     vector<char> v;
 
+    // find the shortest string
     for(int k=0;k<n;k++)
     {
         if(A[k].length() < m)
             m = A[k].length();
     }
 
+    // as soon as common character is not matched, stop the loop 
     for(i=0; i<m;i++)
     {
         j = 0;
@@ -31,6 +33,7 @@ string prefix(vector<string> &A)
 
         if(flag == 0)
         {
+            // insert common character
             v.push_back(temp);
         }
         else
