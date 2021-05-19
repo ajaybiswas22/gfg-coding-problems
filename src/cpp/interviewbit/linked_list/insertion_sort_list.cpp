@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<cstdlib>
+#include<stdio.h>
 using namespace std;
 
 class node
@@ -19,6 +20,7 @@ void insert_beg(int value)
     head = temp;
 }
 
+
 void display()
 {
     node* temp = head;
@@ -27,6 +29,7 @@ void display()
         cout<<temp->data<<"\n";
         temp = temp->next;
     }
+    printf("%d",1);
 }
 
 void  insertBetween(node* a, node* b, int mid)
