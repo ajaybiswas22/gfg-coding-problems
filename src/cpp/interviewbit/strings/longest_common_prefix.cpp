@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-void prefix(vector<string> &A)
+// Longest common prefix 
+string prefix(vector<string> &A)
 {
     int n = A.size();
     int m = A[0].length();
@@ -38,15 +39,18 @@ void prefix(vector<string> &A)
         }
     }
     
+    vector<char> vv;
     for(int k=0;k<v.size();k++)
     {
-        cout<<v[k];
+        vv.push_back(v[k]);
     }
+    string ss(vv.begin(),vv.end());
+    return ss;
 }
 
 int main()
 {
     vector<string> A = {"aaa", "aa", "a"};
-    prefix(A);
+    cout<<prefix(A);
 
 }
