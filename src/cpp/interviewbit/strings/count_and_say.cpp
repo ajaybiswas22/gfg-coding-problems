@@ -13,7 +13,7 @@ string generate(string p)
         temp = p[i];
         int ind = 0;
         int count = 0;
-        while(temp==p[i])
+        while(temp==p[i]) // breaks when null
         {
             count = count + 1;
             i++;
@@ -21,7 +21,6 @@ string generate(string p)
 
         v.push_back(count + '0');
         v.push_back(temp);
-        temp = p[i];
     }
 
     string str(v.begin(),v.end());
@@ -41,6 +40,6 @@ string count_and_say(int A)
 
 int main()
 {
-    int n = 4;
+    int n = 10;
     cout<<count_and_say(n);
 }
