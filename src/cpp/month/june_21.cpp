@@ -1,32 +1,32 @@
 // rat in a maze using backtracking
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-bool isSafe(vector<vector<int>> maze, int i, int j)
+bool isSafe(vector<vector<int> > maze, int i, int j)
 {
-    int n = maze.size();
-    int m = maze[0].size();
+    int m = maze.size();
+    int n = maze[0].size();
 
-    if(i<m && j<n && i>=0 && j>=0 && maze[i][j] == 1)
-        return true;
+    if(i<m && j<n && i>=0 && j>=0)
+    {
+        if(maze[i][j]!=0)
+            return true;
+        else
+            return false;
+    }
+        
     else
         return false;
 }
 
-bool solveMaze(vector<vector<int>> &maze, int y, int x)
+bool solveMaze(vector<vector<int>> &maze, int x, int y)
 {
-    int n = maze.size();
-    int m = maze[0].size();
+    int m = maze.size();
+    int n = maze[0].size();
 
-    if(x == n-1 && y == m-1)
+    if(x == m-1 && y == n-1)
     {
-        return true;
-    }
-
-    if(isSafe(maze, x+1, y))
-    {
-        solveMaze(maze,x+1,y);
-        maze[x+1][y] = 2;
         return true;
     }
 
@@ -37,10 +37,10 @@ bool solveMaze(vector<vector<int>> &maze, int y, int x)
         return true;
     }
 
-    if(isSafe(maze, x-1, y))
+    if(isSafe(maze, x+1, y))
     {
-        solveMaze(maze,x-1,y);
-        maze[x-1][y] = 2;
+        solveMaze(maze,x+1,y);
+        maze[x+1][y] = 2;
         return true;
     }
 
@@ -48,6 +48,13 @@ bool solveMaze(vector<vector<int>> &maze, int y, int x)
     {
         solveMaze(maze,x,y-1);
         maze[x][y-1] = 2;
+        return true;
+    }
+
+    if(isSafe(maze, x-1, y))
+    {
+        solveMaze(maze,x-1,y);
+        maze[x-1][y] = 2;
         return true;
     }
 
@@ -74,11 +81,11 @@ void printMaze(vector<vector<int>> maze)
 int main()
 {
     
-    vector<vector<int>> maze = {{1,1,0,0,0},
-                                {0,1,1,1,0},
-                                {0,0,1,0,0},
-                                {0,0,1,1,0},
-                                {0,0,1,1,1}};
+    vector<vector<int>> maze = {{1,1,1,1,1},
+                                {1,0,1,1,1},
+                                {1,0,1,0,1},
+                                {1,0,1,0,1},
+                                {1,1,1,0,1}};
 
     cout<<"Possible "<<solveMaze(maze,0,0)<<endl;
     printMaze(maze);
