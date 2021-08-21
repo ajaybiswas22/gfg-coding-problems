@@ -1,5 +1,16 @@
 #include<bits/stdc++.h>
 
+void print(std::vector<std::vector<int>> table)
+{
+    for(int i=0;i<table.size();i++)
+    {
+        for(int j=0;j<table[i].size();j++)
+        {
+            std::cout<<table[i][j]<<" ";
+        }
+        std::cout<<"\n";
+    }
+}
 int knapsack_01(std::vector<int> val, std::vector<int> wt, int W, int n)
 {
     std::vector<std::vector<int>> table(n+1,std::vector<int> (W+1,-1));
@@ -36,16 +47,15 @@ int knapsack_01(std::vector<int> val, std::vector<int> wt, int W, int n)
             }
         }
     }
-
+    print(table);
     return table[n][W];
-
 }
 
 int main()
 {
-    std::vector<int> val = {3,4,7,6,18};
-    std::vector<int> wt = {1,2,3,4,5};
-    int W = 6, n = 5;
+    std::vector<int> val = {4,2,6};
+    std::vector<int> wt = {1,2,3};
+    int W = 4, n = 3;
     std::cout<<knapsack_01(val,wt,W,n)<<"\n";
     return 0;
 }

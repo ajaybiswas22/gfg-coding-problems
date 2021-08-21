@@ -40,9 +40,9 @@ void print(std::vector<std::vector<int>> table)
 
 int main()
 {
-    std::vector<int> val = {3,4,7,6,18};
-    std::vector<int> wt = {1,2,3,4,5};
-    int W = 6, n = 5;
+    std::vector<int> val = {4,2,6};
+    std::vector<int> wt = {1,2,3};
+    int W = 4, n = 3;
     std::vector<std::vector<int>> table(n+1,std::vector<int> (W+1,-1));
     std::cout<<knapsack_01(val,wt,table,W,n)<<"\n\n";
     print(table);

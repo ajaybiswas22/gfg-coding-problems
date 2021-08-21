@@ -11,9 +11,9 @@ bool subsetSum(std::vector<int> val,int n,int sum, std::vector<std::vector<bool>
         return table[n][sum];
 
     if(val[n-1] <= sum)
-        return subsetSum(val,n-1,sum-val[n-1],table) || subsetSum(val,n-1,sum,table);
+        return table[n][sum] = subsetSum(val,n-1,sum-val[n-1],table) || subsetSum(val,n-1,sum,table);
     else
-        return subsetSum(val,n-1,sum,table);
+        return table[n][sum] = subsetSum(val,n-1,sum,table);
 }
 
 int main()
