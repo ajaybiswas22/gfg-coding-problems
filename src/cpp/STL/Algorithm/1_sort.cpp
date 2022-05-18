@@ -11,6 +11,11 @@ void printList(vector<int> list)
         cout<<val<<" ";
 }
 
+bool big(int a, int b)
+{
+    return a>b?a:b;
+}
+
 int main()
 {
     vector<int> list = {67,72,56,12,0,-3,21,9,10,100};

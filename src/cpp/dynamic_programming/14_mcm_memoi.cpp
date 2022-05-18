@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int mcm(int arr[],int i, int j,vector<vector<int>> &table)
+int mcm(int arr[],int i, int j,vector<vector<int> > &table)
 {
     if(i >= j)
         return 0;
@@ -24,6 +24,6 @@ int main()
 {
     int arr[] = {1,2,3,4,3};
     int n = sizeof(arr) / sizeof(arr[0]);
-    vector<vector<int>> table(n+1,vector<int>(n+1,-1));
+    vector<vector<int> > table(n+1,vector<int>(n+1,-1));
     cout<<mcm(arr,1,n-1,table);
 }

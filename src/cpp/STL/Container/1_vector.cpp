@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<vector>
+#include<iostream>
 using namespace std;
 
 void printString(vector<char> list)
@@ -30,13 +31,13 @@ int main()
 
     int n = 10;
     // Create a vector of size n with
-    // all values as 20.
-    vector<int> vect(n, 20);
+    // all values as 0.
+    vector<int> vect(n, 0);
 
     printString(x);
     cout<<endl;
     printInt(v);
     cout<<endl;
-    cout<<vect[2]<<endl;
+    printInt(vect);
 
 }

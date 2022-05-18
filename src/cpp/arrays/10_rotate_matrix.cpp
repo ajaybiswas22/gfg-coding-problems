@@ -1,14 +1,7 @@
-#include<bits/stdc++.h>
+#include<vector>
+#include<algorithm>
+#include<iostream>
 using namespace std;
-
-void swapFour(int &x, int &y, int &z,int &a)
-{
-    int temp = x;
-    x = y;
-    y = z;
-    z = a;
-    a = temp;
-}
 
 void printMatrix(vector<vector<int>> A)
 {
@@ -21,26 +14,31 @@ void printMatrix(vector<vector<int>> A)
         cout<<"\n";
     }
 }
+
+void swapFour(int *p1, int *p2, int *p3, int *p4)
+{
+    int temp = *p2;
+    *p2 = *p1;
+    *p1 = *p4;
+    *p4 = *p3;
+    *p3 = temp;
+
+}
+
 void rotate(vector<vector<int>> &A)
 {
-    int n = A.size();
+    int N = A.size();
 
-    int *a,*b,*c,*d;        // a b
-                            // c d
-    
-    for(int i=0;i<n/2;i++)      // outer to inner
-    {    
-        for(int j=0;j<n-i-1;j++)      // stop one before also stay in inner box
+    for (int i=0;i<N/2;i++)
+    {
+        for(int j=i;j<N-i-1;j++)
         {
-            // place all pointers at each corner
-            // move a right, c up, d left, b down (spins left side)
-            a = &A[i][i+j];
-            b = &A[i+j][n-1-i];
-            c = &A[n-1-i-j][i];
-            d = &A[n-1-i][n-1-i-j];
-            swapFour(*a,*b,*d,*c);  
-        }
-
+            int *p1 = &A[i+j][i];
+            int *p2 = &A[N - 1 - i][i+j];
+            int *p3 = &A[N - 1 - i - j][N - 1 - i];
+            int *p4 = &A[i][N - 1 - i - j];
+            swapFour(p1, p2, p3, p4);
+        }  
     }
 }
 
@@ -52,9 +50,15 @@ int main()
                               {9,10,11,12},
                               {13,14,15,16} };
 
-    printMatrix(A);
+    /*
+    4 8 12 16
+    3 7 11 15
+    2 6 10 14
+    1 5  9 13 
+    */
+   
     rotate(A);
-    cout<<"\n";
     printMatrix(A);
+    cout<<"\n";
     return 0;
 }

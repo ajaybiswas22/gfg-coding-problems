@@ -17,7 +17,9 @@ int main()
     vector<char> vstr(str.begin(),str.end());
 
     // iterator to offset. Does not works with string as search element.
-    auto it = find(vstr.begin(),vstr.end(),'W');
+    auto it = find(vstr.begin(),vstr.end(),'o');
+    if(it == vstr.end())
+        cout<<"-1\n";
 
     cout<<"Offset: "<<it - vstr.begin()<<endl;
 }
